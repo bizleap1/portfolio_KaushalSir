@@ -1,0 +1,89 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  html, body {
+    @apply bg-black-deep text-white-primary antialiased;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-wide uppercase;
+  }
+
+  .font-script {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .font-bebas {
+    font-family: 'Bebas Neue', sans-serif;
+  }
+  
+  .font-oswald {
+    font-family: 'Oswald', sans-serif;
+  }
+}
+
+@layer utilities {
+  .bg-gold-gradient {
+    background: linear-gradient(180deg, #D8A928 0%, #8A680B 100%);
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(180deg, #D8A928 0%, #8A680B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px rgba(248, 248, 245, 0.2);
+    color: transparent;
+  }
+  
+  .text-outline-gold {
+    -webkit-text-stroke: 1px #D8A928;
+    color: transparent;
+  }
+
+  .text-outline-charcoal {
+    -webkit-text-stroke: 1px #111111;
+    color: transparent;
+  }
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Hide default scrollbar to keep it clean */
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Selection */
+::selection {
+  @apply bg-gold-primary text-black-deep;
+}
