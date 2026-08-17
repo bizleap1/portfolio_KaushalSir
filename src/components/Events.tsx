@@ -57,7 +57,7 @@ export const Events = () => {
   }, []);
 
   return (
-    <section ref={containerRef} id="events" className="py-32 px-6 md:px-16 bg-black-secondary relative overflow-hidden">
+    <section ref={containerRef} id="events" className="py-32 px-6 md:px-16 bg-transparent relative overflow-hidden">
       <div className="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
         
         {/* Left Side - Title & Image */}

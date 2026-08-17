@@ -45,53 +45,11 @@ export const WorkAndCaseStudies = () => {
   const cardsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!containerRef.current || !titleRef.current || !cardsRef.current) return;
-
-    const ctx = gsap.context(() => {
-      // Title animation
-      gsap.fromTo(
-        '.work-title-anim',
-        { opacity: 0, y: 150, rotationZ: 10, scale: 0.8 },
-        {
-          opacity: 1,
-          y: 0,
-          rotationZ: 0,
-          scale: 1,
-          stagger: 0.05,
-          duration: 0.8,
-          ease: 'expo.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 95%',
-          },
-        }
-      );
-
-      // Cards animation
-      gsap.fromTo(
-        cardsRef.current!.children,
-        { opacity: 0, y: 100, rotationX: 15, scale: 0.9, transformPerspective: 1000 },
-        {
-          opacity: 1,
-          y: 0,
-          rotationX: 0,
-          scale: 1,
-          stagger: 0.2,
-          duration: 1.5,
-          ease: 'expo.out',
-          scrollTrigger: {
-            trigger: cardsRef.current,
-            start: 'top 80%',
-          },
-        }
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
+    // Animations removed for instant loading
   }, []);
 
   return (
-    <section ref={containerRef} id="work" className="py-32 px-6 md:px-16 bg-black-deep relative overflow-hidden">
+    <section ref={containerRef} id="work" className="py-32 px-6 md:px-16 bg-transparent relative overflow-hidden">
       <div className="max-w-[1920px] mx-auto">
         
         <div ref={titleRef} className="flex flex-col mb-20">

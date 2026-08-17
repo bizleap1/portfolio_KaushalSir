@@ -3,6 +3,7 @@ import { useSmoothScroll } from '../hooks/useSmoothScroll';
 import { Loader } from '../components/Loader';
 import { Navbar } from '../components/Navbar';
 import { Hero } from '../components/Hero';
+import { ScrollAnimationBackground } from '../components/ScrollAnimationBackground';
 import { About } from '../components/About';
 import { WorkAndCaseStudies } from '../components/WorkAndCaseStudies';
 import { Events } from '../components/Events';
@@ -36,13 +37,16 @@ export const Home = () => {
       <div className={`relative transition-opacity duration-1000 ${loading ? 'opacity-0' : 'opacity-100'}`}>
         <Navbar />
         
-        <main>
+        <main className="relative">
           <Hero />
-          <About />
-          <WorkAndCaseStudies />
-          <Events />
-          <Ventures />
-          <Contact />
+          <div className="relative z-10 w-full">
+            <ScrollAnimationBackground />
+            <About />
+            <WorkAndCaseStudies />
+            <Events />
+            <Ventures />
+            <Contact />
+          </div>
         </main>
 
         <Footer />

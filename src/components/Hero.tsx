@@ -69,7 +69,7 @@ export const Hero = () => {
   ];
 
   return (
-    <section ref={containerRef} className="relative w-full h-screen min-h-[800px] flex items-center justify-center overflow-hidden bg-black-deep pt-12">
+    <section ref={containerRef} className="relative z-20 w-full h-screen min-h-[800px] flex items-center justify-center overflow-hidden bg-black-deep pt-12">
       
       {/* Background Giant Text - Left Aligned to match foreground */}
       <div className="absolute inset-0 flex items-center justify-start pointer-events-none overflow-hidden w-full max-w-[1920px] mx-auto px-6 md:px-16 z-0">

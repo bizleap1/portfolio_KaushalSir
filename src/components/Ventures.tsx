@@ -93,7 +93,7 @@ export const Ventures = () => {
   }, []);
 
   return (
-    <section ref={containerRef} id="ventures" className="py-32 px-6 md:px-16 bg-black-deep relative overflow-hidden">
+    <section ref={containerRef} id="ventures" className="py-32 px-6 md:px-16 bg-transparent relative overflow-hidden">
       <div className="max-w-[1920px] mx-auto flex flex-col items-center">
         
         <div className="flex flex-col items-center text-center mb-24 w-full">

@@ -35,7 +35,7 @@ export const Contact = () => {
   }, []);
 
   return (
-    <section ref={containerRef} id="contact" className="pt-32 pb-48 px-6 md:px-12 bg-black-secondary relative overflow-hidden">
+    <section ref={containerRef} id="contact" className="pt-32 pb-48 px-6 md:px-12 bg-transparent relative overflow-hidden">
       <div className="max-w-[1920px] mx-auto">
         
         <div className="flex flex-col mb-6">

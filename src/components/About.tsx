@@ -153,7 +153,7 @@ export const About = () => {
   }, []);
 
   return (
-    <section ref={containerRef} id="about" className="pt-32 pb-16 bg-black-secondary relative overflow-hidden">
+    <section ref={containerRef} id="about" className="pt-32 pb-16 bg-transparent relative overflow-hidden">
       
       {/* Top About Section */}
       <div className="max-w-[1920px] mx-auto px-6 md:px-16 mb-40 lg:mb-56 relative">
