@@ -1,43 +1,10 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { caseStudies } from '../data/caseStudies.ts';
+import { paths } from '../data/site.ts';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const caseStudies = [
-  {
-    id: 1,
-    title: 'Solar Manufacturing LinkedIn Strategy',
-    category: 'B2B Tech',
-    desc: 'Developed LinkedIn content plan for solar manufacturing client. Corporate-focused messaging targeting decision-makers. Positioned brand as industry thought leader.',
-    tags: ['B2B', 'LinkedIn', 'Thought Leadership'],
-    image: '/case_study_solar.png'
-  },
-  {
-    id: 2,
-    title: 'Healthcare Dental Practice Video Series',
-    category: 'Healthcare',
-    desc: 'Produced educational video content for dental professionals. Focused on visual storytelling and audience engagement. Built trust through informative, value-driven content.',
-    tags: ['Video Marketing', 'Storytelling', 'Trust Building'],
-    image: '/case_study_dental.png'
-  },
-  {
-    id: 3,
-    title: 'Hospitality Resort & Travel Marketing',
-    category: 'Hospitality',
-    desc: 'Created SEO-driven content for Papillon India (tours & travel). Developed 3-month social media plans for resort properties. Integrated content marketing with direct booking funnels.',
-    tags: ['SEO', 'Conversion', 'Booking Funnels'],
-    image: '/case_study_resort.png'
-  },
-  {
-    id: 4,
-    title: 'Automotive Nexa Cars - Social Media Growth',
-    category: 'Automotive',
-    desc: 'Managed social media for Nexa dealership in Yavatmal district. Developed comprehensive content strategy aligned with brand guidelines. Delivered consistent lead generation through targeted campaigns.',
-    tags: ['Social Media', 'Lead Gen', 'Content Strategy'],
-    image: '/case_study_auto.png'
-  }
-];
 
 export const WorkAndCaseStudies = () => {
   const containerRef = useRef<HTMLElement>(null);
@@ -71,7 +38,7 @@ export const WorkAndCaseStudies = () => {
               
               {/* Background Image */}
               <div className="absolute inset-0 z-0 bg-black-deep">
-                <img src={study.image} alt={study.title} className="w-full h-full object-cover opacity-40 group-hover:opacity-70 group-focus:opacity-70 group-hover:scale-110 group-focus:scale-110 transition-all duration-1000 ease-out mix-blend-luminosity group-hover:mix-blend-normal group-focus:mix-blend-normal" />
+                <img src={study.image} alt={`${study.title} – ${study.category} case study by Bizleap`} width={study.imageWidth} height={study.imageHeight} loading="lazy" decoding="async" className="w-full h-full object-cover opacity-40 group-hover:opacity-70 group-focus:opacity-70 group-hover:scale-110 group-focus:scale-110 transition-all duration-1000 ease-out mix-blend-luminosity group-hover:mix-blend-normal group-focus:mix-blend-normal" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black-deep via-black-deep/70 to-transparent transition-opacity duration-700 group-hover:opacity-60 group-focus:opacity-60"></div>
               </div>
 
@@ -101,6 +68,12 @@ export const WorkAndCaseStudies = () => {
 
             </div>
           ))}
+        </div>
+
+        <div className="mt-16 flex justify-center">
+          <a href={paths.caseStudies} className="font-sans text-xs font-bold uppercase tracking-widest text-gold-primary border border-gold-primary/40 px-8 py-4 hover:bg-gold-primary hover:text-black-deep transition-colors duration-500" data-cursor="interactable">
+            View all case studies
+          </a>
         </div>
 
       </div>

@@ -1,46 +1,9 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ventures } from '../data/ventures.ts';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const ventures = [
-  {
-    id: 1,
-    title: 'Bizleap',
-    type: 'Digital Marketing Agency',
-    desc: 'A specialized team of 35+ professionals scaling brands across diverse sectors.',
-    image: '/bizleap_bg.png'
-  },
-  {
-    id: 2,
-    title: 'Banginwar Marketing',
-    type: 'Agriculture Business',
-    desc: 'Modernizing agriculture through strategic retail and agritech marketing.',
-    image: '/banginwar_bg.png'
-  },
-  {
-    id: 3,
-    title: 'AAI',
-    type: 'AI Software & Product',
-    desc: 'Building next-gen AI tools designed for marketing precision and automation.',
-    image: '/aai_bg.png'
-  },
-  {
-    id: 4,
-    title: 'Asaawad by vijaye',
-    type: 'Restaurant Venture',
-    desc: 'Redefining gourmet experiences through premium storytelling and hospitality.',
-    image: '/asaawad_bg.png'
-  },
-  {
-    id: 5,
-    title: 'Modicare',
-    type: 'Franchised Business Network',
-    desc: 'Leading a massive distribution network of 2,000+ individuals, focused on self-growth and sales operations.',
-    image: '/modicare_bg.png'
-  }
-];
 
 export const Ventures = () => {
   const containerRef = useRef<HTMLElement>(null);
@@ -125,7 +88,7 @@ export const Ventures = () => {
                 
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 bg-black-deep">
-                  <img src={venture.image} alt={venture.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-1000 ease-out mix-blend-luminosity group-hover:mix-blend-normal" />
+                  <img src={venture.image} alt={`${venture.title} – ${venture.type}`} width={venture.imageWidth} height={venture.imageHeight} loading="lazy" decoding="async" className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-1000 ease-out mix-blend-luminosity group-hover:mix-blend-normal" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black-deep/90 via-black-deep/40 to-transparent transition-opacity duration-700 group-hover:opacity-40"></div>
                 </div>
 

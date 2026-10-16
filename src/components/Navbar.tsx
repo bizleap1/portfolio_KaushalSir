@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
+import { homeNav, type NavItem } from '../data/nav.ts';
 
-export const Navbar = () => {
+interface NavbarProps {
+  /** Links to render. Defaults to the home-page section anchors. */
+  items?: NavItem[];
+  /** Seconds to wait before the bar slides in (the home page waits for its intro loader). */
+  introDelay?: number;
+}
+
+export const Navbar = ({ items = homeNav, introDelay = 1.5 }: NavbarProps) => {
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -10,13 +18,7 @@ export const Navbar = () => {
     setIsScrolled(latest > 50);
   });
 
-  const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'My Work', href: '#work' },
-    { name: 'Case Study', href: '#work' },
-    { name: 'Events', href: '#events' },
-    { name: 'Ventures', href: '#ventures' }
-  ];
+  const navItems = items;
 
   return (
     <>
@@ -26,11 +28,11 @@ export const Navbar = () => {
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 1, ease: 'easeOut', delay: 1.5 }}
+        transition={{ duration: 1, ease: 'easeOut', delay: introDelay }}
       >
         <div className="w-8 hidden lg:block" />
 
-        <nav className="hidden lg:flex items-center justify-center gap-14 absolute left-1/2 -translate-x-1/2">
+        <nav aria-label="Primary" className="hidden lg:flex items-center justify-center gap-14 absolute left-1/2 -translate-x-1/2">
           {navItems.map((item) => (
             <a
               key={item.name}
@@ -47,9 +49,11 @@ export const Navbar = () => {
         <div className="w-8 hidden lg:block" />
 
         {/* Mobile Menu Button */}
-        <button 
-          className="lg:hidden w-8 h-8 flex flex-col justify-center items-end gap-1.5 z-[60]" 
+        <button
+          className="lg:hidden w-8 h-8 flex flex-col justify-center items-end gap-1.5 z-[60]"
           data-cursor="interactable"
+          aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMobileMenuOpen}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <div className={`w-full h-[1.5px] bg-white-primary transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-[3.5px]' : ''}`} />
