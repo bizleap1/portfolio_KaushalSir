@@ -2,18 +2,71 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Google Fonts -->
+    <meta name="theme-color" content="#050505" />
+
+    <!-- Icons (Google wants a favicon that is a multiple of 48px) -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" href="/favicon-96.png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Google Fonts: only the 3 families the site actually uses (Anton, Inter, Dancing Script); loaded without blocking first paint -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,600&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
-    
-    <title>Kaushal Banginwar | Portfolio</title>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@500;700&display=swap"></noscript>
+
+    <!--
+      SEO block (title, description, canonical, Open Graph, Twitter, JSON-LD).
+      `npm run build` regenerates this block for every page from src/seo/* + src/data/site.ts (scripts/prerender.mjs).
+      The copy below is only a fallback for the home page if that step is ever skipped.
+    -->
+    <!--seo:start-->
+    <title>Kaushal Banginwar – Founder, Bizleap | Digital Marketing Nagpur</title>
+    <meta name="description" content="Kaushal Banginwar is the founder &amp; CEO of Bizleap, a digital marketing and technology agency in Nagpur. Case studies, speaking and ventures." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Kaushal Banginwar" />
+    <link rel="canonical" href="https://kaushalbanginwar.in/" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:site_name" content="Kaushal Banginwar" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kaushal Banginwar – Founder, Bizleap | Digital Marketing Nagpur" />
+    <meta property="og:description" content="Kaushal Banginwar is the founder &amp; CEO of Bizleap, a digital marketing and technology agency in Nagpur. Case studies, speaking and ventures." />
+    <meta property="og:url" content="https://kaushalbanginwar.in/" />
+    <meta property="og:image" content="https://kaushalbanginwar.in/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://kaushalbanginwar.in/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Kaushal Banginwar – Founder &amp; CEO of Bizleap" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kaushal Banginwar – Founder, Bizleap | Digital Marketing Nagpur" />
+    <meta name="twitter:description" content="Kaushal Banginwar is the founder &amp; CEO of Bizleap, a digital marketing and technology agency in Nagpur. Case studies, speaking and ventures." />
+    <meta name="twitter:image" content="https://kaushalbanginwar.in/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Kaushal Banginwar – Founder &amp; CEO of Bizleap" />
+    <link rel="preload" as="image" href="/portrait-transparent.webp" type="image/webp" fetchpriority="high" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://kaushalbanginwar.in/#person","name":"Kaushal Banginwar","givenName":"Kaushal","familyName":"Banginwar","url":"https://kaushalbanginwar.in/","image":{"@type":"ImageObject","url":"https://kaushalbanginwar.in/kaushal-banginwar.jpg","width":610,"height":920,"caption":"Kaushal Banginwar, Founder & CEO of Bizleap"},"jobTitle":"Founder & CEO","description":"Kaushal Banginwar is an entrepreneur from Nagpur, Maharashtra, India, and the founder & CEO of Bizleap, a full-service digital marketing and technology agency. He began in network marketing at 15, founded Bizleap in 2020, and now leads a team of 35+ professionals who have worked with 350+ brands across 5 Indian states. He is also a public speaker at 15+ institutions and a mentor to young entrepreneurs.","worksFor":{"@id":"https://bizleap.in/#organization"},"address":{"@type":"PostalAddress","addressLocality":"Nagpur","addressRegion":"Maharashtra","addressCountry":"IN"},"alumniOf":{"@type":"EducationalOrganization","name":"Amity Global Business School, Pune"},"knowsAbout":["Digital marketing","Social media marketing","Search engine optimization","Web design and development","E-commerce","AI in marketing","Entrepreneurship","Public speaking"],"sameAs":["https://www.linkedin.com/in/kaushalbanginwar/","https://www.instagram.com/kaushalbanginwar.in/","https://bizleap.in/"],"mainEntityOfPage":{"@id":"https://kaushalbanginwar.in/#webpage"}},{"@type":"Organization","@id":"https://bizleap.in/#organization","name":"Bizleap","url":"https://bizleap.in/","description":"Bizleap is a full-service digital marketing and technology agency in Nagpur, Maharashtra, founded by Kaushal Banginwar in 2020.","foundingDate":"2020","founder":{"@id":"https://kaushalbanginwar.in/#person"},"address":{"@type":"PostalAddress","addressLocality":"Nagpur","addressRegion":"Maharashtra","addressCountry":"IN"},"areaServed":[{"@type":"AdministrativeArea","name":"Maharashtra"},{"@type":"AdministrativeArea","name":"Gujarat"},{"@type":"AdministrativeArea","name":"Delhi"},{"@type":"AdministrativeArea","name":"Karnataka"},{"@type":"AdministrativeArea","name":"West Bengal"}],"numberOfEmployees":{"@type":"QuantitativeValue","minValue":35},"knowsAbout":["Digital marketing","Social media marketing","Web design and development","AI integrated marketing"]},{"@type":"WebSite","@id":"https://kaushalbanginwar.in/#website","url":"https://kaushalbanginwar.in/","name":"Kaushal Banginwar","description":"Kaushal Banginwar is the founder & CEO of Bizleap, a digital marketing and technology agency in Nagpur. Case studies, speaking and ventures.","inLanguage":"en-IN","publisher":{"@id":"https://kaushalbanginwar.in/#person"}},{"@type":"ProfilePage","@id":"https://kaushalbanginwar.in/#webpage","url":"https://kaushalbanginwar.in/","name":"Kaushal Banginwar – Founder, Bizleap | Digital Marketing Nagpur","description":"Kaushal Banginwar is the founder & CEO of Bizleap, a digital marketing and technology agency in Nagpur. Case studies, speaking and ventures.","inLanguage":"en-IN","isPartOf":{"@id":"https://kaushalbanginwar.in/#website"},"about":{"@id":"https://kaushalbanginwar.in/#person"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://kaushalbanginwar.in/og-image.jpg","width":1200,"height":630},"dateModified":"2026-10-16","mainEntity":{"@id":"https://kaushalbanginwar.in/#person"}}]}</script>
+    <!--seo:end-->
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
+    <!--seo-fallback:start-->
+    <noscript>
+      <main style="max-width:720px;margin:0 auto;padding:48px 24px;font-family:system-ui,sans-serif;line-height:1.6;color:#f5f3ee">
+        <h1>Kaushal Banginwar – Founder &amp; CEO of Bizleap</h1>
+        <p>Kaushal Banginwar is an entrepreneur from Nagpur, Maharashtra, India, and the founder &amp; CEO of Bizleap, a full-service digital marketing and technology agency. He began in network marketing at 15, founded Bizleap in 2020, and now leads a team of 35+ professionals who have worked with 350+ brands across 5 Indian states. He is also a public speaker at 15+ institutions and a mentor to young entrepreneurs.</p>
+        <ul>
+          <li><a href="/about/">About Kaushal Banginwar</a></li>
+          <li><a href="/case-studies/">Case studies</a></li>
+          <li><a href="/speaking/">Public speaking</a></li>
+          <li><a href="https://bizleap.in/" rel="me noopener">Bizleap</a></li>
+          <li><a href="https://www.linkedin.com/in/kaushalbanginwar/" rel="me noopener">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/kaushalbanginwar.in/" rel="me noopener">Instagram</a></li>
+        </ul>
+      </main>
+    </noscript>
+    <!--seo-fallback:end-->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -14,14 +14,15 @@ export const Loader = ({ onComplete }: LoaderProps) => {
       onAnimationComplete={onComplete}
     >
       <div className="relative overflow-hidden mb-8">
-        <motion.h1
+        {/* Decorative intro text — deliberately NOT a heading (the page's only <h1> lives in the Hero). */}
+        <motion.p
           className="font-display text-5xl md:text-8xl tracking-widest text-gold-primary uppercase"
           initial={{ y: '100%' }}
           animate={{ y: 0 }}
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
         >
           K.B's Portfolio
-        </motion.h1>
+        </motion.p>
       </div>
       
       <div className="w-64 h-[1px] bg-white-primary/20 relative overflow-hidden">

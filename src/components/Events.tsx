@@ -1,32 +1,10 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { events, speakingPhoto } from '../data/events.ts';
+import { facts, paths } from '../data/site.ts';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const events = [
-  {
-    id: 1,
-    title: 'Amity University',
-    role: 'Guest Speaker',
-    topic: 'Digital Marketing & Entrepreneurship',
-    desc: 'Addressed aspiring entrepreneurs on building scalable digital agencies and mastering the fundamentals of relationship management.'
-  },
-  {
-    id: 2,
-    title: 'Symbiosis International',
-    role: 'Keynote Speaker',
-    topic: 'The Future of AI in Marketing',
-    desc: 'Discussed the intersection of artificial intelligence and marketing strategy, and how upcoming tools will democratize access to high-level marketing.'
-  },
-  {
-    id: 3,
-    title: 'Raisoni Group of Institutions',
-    role: 'Panelist',
-    topic: 'Youth Leadership & Business Execution',
-    desc: 'Shared personal journey from a 15-year-old networker to leading a 35+ person agency, emphasizing that execution is everything.'
-  }
-];
 
 export const Events = () => {
   const containerRef = useRef<HTMLElement>(null);
@@ -67,11 +45,11 @@ export const Events = () => {
               <span className="text-white-primary uppercase text-xs tracking-[0.3em]">Events</span>
             </span>
             <h2 className="font-display text-5xl md:text-7xl text-white-primary tracking-wide uppercase leading-none mb-12">
-              Public<br />
+              Public{' '}<br />
               <span className="text-gold-primary">Speaking</span>
             </h2>
             <div className="relative group overflow-hidden rounded-xl border border-white-primary/10">
-              <img src="/IMG_8071.JPEG" alt="Public Speaking" className="w-full h-auto aspect-[4/5] object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
+              <img src={speakingPhoto.src} alt={speakingPhoto.alt} width={speakingPhoto.width} height={speakingPhoto.height} loading="lazy" decoding="async" className="w-full h-auto aspect-[4/5] object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-black-deep/60 via-transparent to-transparent opacity-60"></div>
             </div>
           </div>
@@ -80,7 +58,7 @@ export const Events = () => {
         {/* Right Side - Event List */}
         <div ref={contentRef} className="col-span-1 lg:col-span-8 flex flex-col gap-8 lg:pl-12 lg:pt-[4.5rem]">
           <p className="font-sans text-white-primary text-xl md:text-2xl font-medium leading-snug mb-12 max-w-2xl">
-            At 21, I've had the privilege of speaking at <span className="text-gold-primary">prestigious institutions</span>. My mission is to democratize access to <span className="text-gold-primary">high-level marketing strategies</span> and help the next generation of entrepreneurs build brands that <span className="text-gold-primary italic">thrive.</span>
+            At 21, I've had the privilege of speaking at {facts.institutionsSpoken}+ <span className="text-gold-primary">prestigious institutions</span>. My mission is to democratize access to <span className="text-gold-primary">high-level marketing strategies</span> and help the next generation of entrepreneurs build brands that <span className="text-gold-primary italic">thrive.</span>
           </p>
 
           {events.map((event) => (
@@ -108,6 +86,12 @@ export const Events = () => {
               </div>
             </div>
           ))}
+
+          <div className="pt-4">
+            <a href={paths.speaking} className="font-sans text-xs font-bold uppercase tracking-widest text-gold-primary hover:text-white-primary transition-colors duration-300" data-cursor="interactable">
+              All speaking engagements &rarr;
+            </a>
+          </div>
         </div>
 
       </div>

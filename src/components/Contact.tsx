@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { email, phone, phoneHref, social } from '../data/site.ts';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,7 +69,7 @@ export const Contact = () => {
               Ready to elevate your digital presence? We partner with ambitious brands to create experiences that drive real business growth.
             </p>
             
-            <a href="mailto:kaushalbanginwar@gmail.com" className="group relative px-8 py-5 bg-gold-primary text-black-deep font-sans text-xs font-bold uppercase tracking-widest overflow-hidden" data-cursor="interactable">
+            <a href={`mailto:${email}`} className="group relative px-8 py-5 bg-gold-primary text-black-deep font-sans text-xs font-bold uppercase tracking-widest overflow-hidden" data-cursor="interactable">
               <span className="relative z-10 flex items-center gap-3">
                 Start A Project
                 <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -83,14 +84,16 @@ export const Contact = () => {
           <div className="flex flex-col lg:items-end justify-end">
             <div className="w-full max-w-xl flex flex-col mt-16 lg:mt-0 border-t border-grey-secondary/20">
               {[
-                { label: 'Email', value: 'kaushalbanginwar@gmail.com', link: 'mailto:kaushalbanginwar@gmail.com' },
-                { label: 'Phone', value: '+91 812 812 1004', link: 'tel:+918128121004' },
-                { label: 'Instagram', value: '@kaushalbanginwar.in', link: 'https://www.instagram.com/kaushalbanginwar.in/?hl=en' },
-                { label: 'LinkedIn', value: 'Kaushal Banginwar', link: 'https://www.linkedin.com/in/kaushalbanginwar/' },
+                { label: 'Email', value: email, link: `mailto:${email}` },
+                { label: 'Phone', value: phone, link: phoneHref },
+                { label: 'Instagram', value: '@kaushalbanginwar.in', link: social.instagram },
+                { label: 'LinkedIn', value: 'Kaushal Banginwar', link: social.linkedin },
+                { label: 'Bizleap', value: 'bizleap.in', link: social.bizleap },
               ].map((item, i) => (
                 <a 
                   key={i} 
                   href={item.link} 
+                  {...(item.link.startsWith('http') ? { rel: 'me noopener' } : {})}
                   className="group flex flex-col sm:flex-row sm:items-center justify-between py-6 lg:py-8 border-b border-grey-secondary/20 hover:border-gold-primary transition-colors duration-500" 
                   data-cursor="interactable"
                 >
